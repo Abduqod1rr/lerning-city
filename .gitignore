@@ -25,3 +25,43 @@ Thumbs.db
 .coverage
 .tox/
 .eggs/
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ---- Virtual environment ----
+venv/
+env/
+.noteapivn/
+*.env
+
+# ---- Django ----
+*.log
+db.sqlite3
+media/
+staticfiles/
+static/
+*.pot
+*.pyc
+
+# ---- VS Code ----
+.vscode/
+.history/
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# ---- PostgreSQL ----
+*.pgsql
+*.psql
+
+# ---- Migrations ----
+*/migrations/__pycache__/
+*/migrations/*.pyc
+*/migrations/*.py
+!*/migrations/__init__.py
+
+# ---- Cache ----
+*.cache
