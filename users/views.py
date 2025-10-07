@@ -4,7 +4,7 @@ from .models import CustomUser
 from .serializers import UserSerializers
 # Create your views here.
 
-class userRegister(generics.CreateAPIView):
+class UserRegister(generics.CreateAPIView):
     queryset=CustomUser.objects.all()
     serializer_class=UserSerializers
 
