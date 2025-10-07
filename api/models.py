@@ -3,6 +3,7 @@ from users.models import CustomUser
 from decimal import Decimal
 # Create your models here.
 
+#
 class Lesson(models.Model):
 
     title=models.CharField(max_length=30,default='**title**')
