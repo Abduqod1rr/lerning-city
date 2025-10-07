@@ -11,7 +11,7 @@ class Lesson(models.Model):
     put_at=models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        ordiring=['-put_at']
+        ordering=['-put_at']
     
     def __str__(self):
         return self.title
