@@ -24,7 +24,8 @@ class Buylessons(generics.CreateAPIView):
 
 class seeLessons(generics.RetrieveAPIView):
 
-    
-    queryset = boughtLessons.objects.all()
     serializer_class = boughtlessons_sz
     permission_classes = [IsStudent]
+
+    def get_queryset(self):
+        return boughtLessons.objects.filter(student=self.request.user)
