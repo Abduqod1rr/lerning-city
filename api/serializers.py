@@ -7,6 +7,8 @@ class lesson_sz(serializers.ModelSerializer):
         fields = ['title' , 'price', 'content']
 
 class boughtlessons_sz(serializers.ModelSerializer):
+    lesson = lesson_sz(read_only=True)
+    student = serializers.StringRelatedField(read_only=True)
     class Meta:
         model = boughtLessons
         fields= '__all__'
