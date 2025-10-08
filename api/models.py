@@ -12,6 +12,7 @@ class Lesson(models.Model):
     owner=models.ForeignKey(CustomUser,on_delete=models.CASCADE)
     put_at=models.DateTimeField(auto_now_add=True)
 
+
     class Meta:
         ordering=['-put_at']
     
