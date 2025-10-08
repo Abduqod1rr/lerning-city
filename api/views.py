@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Lesson , boughtLessons
 from .serializers import lesson_sz ,boughtlessons_sz
-from .permissions import IsOwner
+from .permissions import IsOwner , IsStudent
 from rest_framework import generics
 
 #
@@ -17,6 +17,14 @@ class lesson_crud(generics.RetrieveUpdateDestroyAPIView):
     serializer_class=lesson_sz
     permission_classes=[IsOwner]
 
+#
 class Buylessons(generics.CreateAPIView):
-    queryset = boughtLessons
+    queryset = boughtLessons.objects.all()
     serializer_class = boughtlessons_sz
+
+class seeLessons(generics.RetrieveAPIView):
+
+    
+    queryset = boughtLessons.objects.all()
+    serializer_class = boughtlessons_sz
+    permission_classes = [IsStudent]
