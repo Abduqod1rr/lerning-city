@@ -8,5 +8,6 @@ urlpatterns = [
     path("buy-lesson/<int:pk>", views.Buylessons.as_view(), name="buy"),
     path("home/", views.seeLessons.as_view(), name="see-lessons"),
     path("see-b-lessons/", views.seeBoughtLessons.as_view(), name=""),
-    path("docs/ui/", SpectacularAPIView.as_view(), name="swagger")
+    path("docs/", SpectacularAPIView.as_view(), name="schema"),
+    path("docs/ui/", SpectacularSwaggerView.as_view(), name="swagger-ui"),
 ]
