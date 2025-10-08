@@ -16,7 +16,7 @@ class Lesson(models.Model):
         ordering=['-put_at']
     
     def __str__(self):
-        return self.title
+        return self.title , self.content
     
 #
 class boughtLessons(models.Model):

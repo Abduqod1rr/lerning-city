@@ -22,10 +22,12 @@ class Buylessons(generics.CreateAPIView):
     queryset = boughtLessons.objects.all()
     serializer_class = boughtlessons_sz
 
-class seeLessons(generics.RetrieveAPIView):
+class seeLessons(generics.ListAPIView):
 
+    queryset=Lesson.objects.all()
+    serializer_class=lesson_sz
+
+class seeBoughtLessons(generics.ListAPIView):
+    queryset = boughtLessons.objects.all()
     serializer_class = boughtlessons_sz
     permission_classes = [IsStudent]
-
-    def get_queryset(self):
-        return boughtLessons.objects.filter(student=self.request.user)

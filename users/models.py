@@ -9,3 +9,6 @@ class CustomUser(AbstractUser,models.Model):
     ]
     
     role=models.CharField(choices=ROLE_CHOICES, max_length=50,default="Student")
+
+    def __str__(self):
+        return self.username
