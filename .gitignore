@@ -44,7 +44,7 @@ staticfiles/
 static/
 *.pot
 *.pyc
-lessons/
+lessons
 
 # ---- VS Code ----
 .vscode/
